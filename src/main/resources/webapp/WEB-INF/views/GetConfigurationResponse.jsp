@@ -20,32 +20,32 @@
 --%>
 <%@ include file="00-header.jsp" %>
 <div class="content">
-	<div>
-		<section><span>GetConfigurationResponse from ${chargeBoxId}</span></section>
-		<c:if test="${not empty response.unknownKeys}">
-			<div class="warning">
-				<b>Unknown keys:</b> ${response.unknownKeys}
-			</div>
-			<br>
-		</c:if>
-		<table class="res">
-			<thead>
-			<tr>
-				<th>Key</th>
-				<th>Value</th>
-				<th>Read only?</th>
-			</tr>
-			</thead>
-			<tbody>
-			<c:forEach items="${response.configurationKeys}" var="element">
-				<tr>
-					<td><encode:forHtml value="${element.key}" /></td>
-					<td><encode:forHtml value="${element.value}" /></td>
-					<td>${element.readonly}</td>
-				</tr>
-			</c:forEach>
-			</tbody>
-		</table>
-	</div>
+    <div>
+        <section><span><fmt:message key="get.configuration.response" /> ${chargeBoxId}</span></section>
+        <c:if test="${not empty response.unknownKeys}">
+            <div class="warning">
+                <b><fmt:message key="unknown.keys" />:</b> ${response.unknownKeys}
+            </div>
+            <br>
+        </c:if>
+        <table class="res">
+            <thead>
+                <tr>
+                    <th><fmt:message key="key" /></th>
+                    <th><fmt:message key="value" /></th>
+                    <th><fmt:message key="read.only" /></th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach items="${response.configurationKeys}" var="element">
+                    <tr>
+                        <td><encode:forHtml value="${element.key}" /></td>
+                        <td><encode:forHtml value="${element.value}" /></td>
+                        <td>${element.readonly}</td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+    </div>
 </div>
 <%@ include file="00-footer.jsp" %>

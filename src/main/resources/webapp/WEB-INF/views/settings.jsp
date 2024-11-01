@@ -29,58 +29,94 @@
     </div>
 </spring:hasBindErrors>
 <div class="content">
-<form:form action="${ctxPath}/manager/settings" modelAttribute="settingsForm">
+    <form:form action="${ctxPath}/manager/settings" modelAttribute="settingsForm">
 
-    <section><span>OCPP Settings</span></section>
+    <section><span><fmt:message key="ocpp.settings" /></span></section>
     <table class="userInputFullPage">
-        <tr><td>Heartbeat Interval:</td><td>
-            <form:input path="heartbeat"/>
-        </td></tr>
-        <tr><td><i>
-            The time interval in <b>minutes</b> for how often a charge point <br> should request the current time from SteVe.<br>
-            The value 0 requests clients to use reasonable default values.
-        </i></td><td></td></tr>
-        <tr><td>Expiration:</td><td>
-            <form:input path="expiration"/>
-        </td></tr>
-        <tr><td><i>
-            The amount of time in <b>hours</b> for how long a charge point should cache <br> the authorization info of an
-            idTag in its local white list, if an expiry date is not explicitly set. <br>The value 0 disables this functionality (i.e. no expiry date will be set).
-        </i></td><td></td></tr>
+        <tr>
+            <td><fmt:message key="heartbeat.interval" />:</td>
+            <td>
+                <form:input path="heartbeat"/>
+            </td>
+        </tr>
+        <tr>
+            <td><i>
+                <fmt:message key="heartbeat.interval.description" />
+            </i></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><fmt:message key="expiration" />:</td>
+            <td>
+                <form:input path="expiration"/>
+            </td>
+        </tr>
+        <tr>
+            <td><i>
+                <fmt:message key="expiration.description" />
+            </i></td>
+            <td></td>
+        </tr>
     </table>
 
     <br>
 
-    <section><span>
-        Mail Notification Setting
-        <a class="tooltip" href="#"><img src="${ctxPath}/static/images/info.png" style="vertical-align:middle">
-            <span>Specify the recipients of the notifications by entering one e-mail address per line</span>
-        </a>
-    </span></section>
+    <section>
+        <span>
+            <fmt:message key="mail.notification.setting" />
+            <a class="tooltip" href="#">
+                <img src="${ctxPath}/static/images/info.png" style="vertical-align:middle">
+                <span><fmt:message key="mail.notification.tooltip" /></span>
+            </a>
+        </span>
+    </section>
     <table class="userInputFullPage">
-        <tr><td>Enable Notifications?:</td><td><form:checkbox path="enabled"/></td></tr>
-        <tr><td>Protocol:</td><td><form:input path="protocol"/></td></tr>
-        <tr><td>Host:</td><td><form:input path="host"/></td></tr>
-        <tr><td>Port:</td><td><form:input path="port"/></td></tr>
-        <tr><td>From:</td><td><form:input path="from"/></td></tr>
-        <tr><td>User name:</td><td><form:input path="username"/></td></tr>
-        <tr><td>Password:</td><td><form:input path="password"/></td></tr>
-
-        <tr><td>Recipients:</td>
+        <tr>
+            <td><fmt:message key="enable.notifications" />?:</td>
+            <td><form:checkbox path="enabled"/></td>
+        </tr>
+        <tr>
+            <td><fmt:message key="protocol" />:</td>
+            <td><form:input path="protocol"/></td>
+        </tr>
+        <tr>
+            <td><fmt:message key="host" />:</td>
+            <td><form:input path="host"/></td>
+        </tr>
+        <tr>
+            <td><fmt:message key="port" />:</td>
+            <td><form:input path="port"/></td>
+        </tr>
+        <tr>
+            <td><fmt:message key="from" />:</td>
+            <td><form:input path="from"/></td>
+        </tr>
+        <tr>
+            <td><fmt:message key="username" />:</td>
+            <td><form:input path="username"/></td>
+        </tr>
+        <tr>
+            <td><fmt:message key="password" />:</td>
+            <td><form:input path="password"/></td>
+        </tr>
+        <tr>
+            <td><fmt:message key="recipients" />:</td>
             <td><form:textarea path="recipients"/></td>
         </tr>
         <tr>
-            <td>Notify when... </td>
+            <td><fmt:message key="notify.when" />...</td>
             <td>
                 <form:checkboxes items="${features}" path="enabledFeatures"
                                  itemLabel="text" delimiter="<br/>"/>
             </td>
         </tr>
-        <tr><td></td>
+        <tr>
+            <td></td>
             <td id="add_space">
-                <input type="submit" name="change" value="Change">
-                <input type="submit" name="testMail" value="Send Test Mail">
-            </td></tr>
+                <input type="submit" name="change" value="<fmt:message key='change' />">
+                <input type="submit" name="testMail" value="<fmt:message key='send.test.mail' />">
+            </td>
+        </tr>
     </table>
 
 </form:form>

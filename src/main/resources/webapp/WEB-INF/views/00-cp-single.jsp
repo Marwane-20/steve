@@ -21,7 +21,7 @@
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <table class="userInput">
 	<tr>
-		<td style="vertical-align:top">Select one:</td>
+		<td style="vertical-align:top"><fmt:message key="select.one"/></td>
 		<td>
 			<form:select path="chargePointSelectList" size="5" multiple="false">
 				<c:forEach items="${cpList}" var="cp">

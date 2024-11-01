@@ -35,17 +35,26 @@
 <div class="main">
 <div class="top-banner"><div class="container"><a href="${ctxPath}/manager/home"><img src="${ctxPath}/static/images/logo2.png" height="80"></a></div></div>
 <div class="top-menu"></div>
-<div class="main-wrapper">
+< class="main-wrapper">
     <c:if test="${param.error != null}">
-        <div class="error">Your name or password is incorrect.</div>
+        <div class="error"><fmt:message key="signin.error.message" /></div>
     </c:if>
     <div class="content">
-        <section><span>Sign In</span></section>
+        <section><span><fmt:message key="signin.title" /></span></section>
         <form method="POST" action="${ctxPath}/manager/signin">
             <table class="userInput">
-                <tr><td>Name:</td><td><input type="text" name="username" id="username" required /></td></tr>
-                <tr><td>Password:</td><td><input type="password" name="password" id="password" required /></td></tr>
-                <tr><td></td><td id="add_space"><input type="submit" value="Sign In"></td></tr>
+                <tr>
+                    <td><fmt:message key="signin.username.label" />:</td>
+                    <td><input type="text" name="username" id="username" required /></td>
+                </tr>
+                <tr>
+                    <td><fmt:message key="signin.password.label" />:</td>
+                    <td><input type="password" name="password" id="password" required /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="add_space"><input type="submit" value="<fmt:message key='signin.button' />"></td>
+                </tr>
             </table>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>

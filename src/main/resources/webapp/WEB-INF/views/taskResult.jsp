@@ -20,31 +20,63 @@
 --%>
 <%@ include file="00-header.jsp" %>
 <div class="content">
-<c:if test="${not task.isFinished()}">
-    <script>
-        $(document).ready(
-                setTimeout(function(){
+    <c:if test="${not task.isFinished()}">
+        <script>
+            $(document).ready(
+                setTimeout(function() {
                     window.location.reload(1);
                 }, 5000));
-    </script>
-    <div class="info"><b>Info:</b> This page automatically reloads every 5 seconds until the task is finished.</div>
-</c:if>
+        </script>
+        <div class="info"><b><fmt:message key="task.info.label" /></b> <fmt:message key="task.info.message" /></div>
+    </c:if>
     <center>
         <table id='details' class='cpd'>
-            <thead><tr><th>Task Details</th><th></th></tr></thead>
-            <tr><td>Operation name</td><td>${task.ocppVersion.value} / ${task.operationName}</td></tr>
-            <tr><td>Origin</td><td>${task.origin} (${task.caller})</td></tr>
-            <tr><td>Start timestamp</td><td>${task.startTimestamp}</td></tr>
-            <tr><td>End timestamp</td><td>${task.endTimestamp}</td></tr>
-            <tr><td># of charge point requests</td><td>${task.resultMap.size()}</td></tr>
-            <tr><td># of responses</td><td>${task.responseCount}</td></tr>
-            <tr><td># of errors</td><td>${task.errorCount}</td></tr>
+            <thead>
+                <tr>
+                    <th><fmt:message key="task.details.title" /></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tr>
+                <td><fmt:message key="task.operation.name" /></td>
+                <td>${task.ocppVersion.value} / ${task.operationName}</td>
+            </tr>
+            <tr>
+                <td><fmt:message key="task.origin" /></td>
+                <td>${task.origin} (${task.caller})</td>
+            </tr>
+            <tr>
+                <td><fmt:message key="task.start.timestamp" /></td>
+                <td>${task.startTimestamp}</td>
+            </tr>
+            <tr>
+                <td><fmt:message key="task.end.timestamp" /></td>
+                <td>${task.endTimestamp}</td>
+            </tr>
+            <tr>
+                <td><fmt:message key="task.charge.point.requests" /></td>
+                <td>${task.resultMap.size()}</td>
+            </tr>
+            <tr>
+                <td><fmt:message key="task.responses.count" /></td>
+                <td>${task.responseCount}</td>
+            </tr>
+            <tr>
+                <td><fmt:message key="task.errors.count" /></td>
+                <td>${task.errorCount}</td>
+            </tr>
         </table>
     </center>
     <br>
-    <section><span>Task Result</span></section>
+    <section><span><fmt:message key="task.result.title" /></span></section>
     <table class="res">
-        <thead><tr><th>ChargeBox ID</th><th>Response</th><th>Error</th></tr></thead>
+        <thead>
+            <tr>
+                <th><fmt:message key="task.chargebox.id" /></th>
+                <th><fmt:message key="task.response" /></th>
+                <th><fmt:message key="task.error" /></th>
+            </tr>
+        </thead>
         <tbody>
         <c:forEach items="${task.resultMap}" var="result">
             <tr>
@@ -55,7 +87,7 @@
                             <encode:forHtml value="${result.value.response}" />
                         </c:when>
                         <c:otherwise>
-                            <encode:forHtml value="${result.value.response}" /> (<a href="${ctxPath}/manager/operations/tasks/${taskId}/details/${result.key}/">Details</a>)
+                            <encode:forHtml value="${result.value.response}" /> (<a href="${ctxPath}/manager/operations/tasks/${taskId}/details/${result.key}/"><fmt:message key="task.details.link" /></a>)
                         </c:otherwise>
                     </c:choose>
                 </td>
