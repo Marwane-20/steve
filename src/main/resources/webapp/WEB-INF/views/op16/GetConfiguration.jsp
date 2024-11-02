@@ -22,29 +22,29 @@
 <%@ include file="../00-op-bind-errors.jsp" %>
 <div class="content">
 <div class="left-menu">
-<ul>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/ChangeAvailability">Change Availability</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/ChangeConfiguration">Change Configuration</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/ClearCache">Clear Cache</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/GetDiagnostics">Get Diagnostics</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/RemoteStartTransaction">Remote Start Transaction</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/RemoteStopTransaction">Remote Stop Transaction</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/Reset">Reset</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/UnlockConnector">Unlock Connector</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/UpdateFirmware">Update Firmware</a></li>
-	<hr>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/ReserveNow">Reserve Now</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/CancelReservation">Cancel Reservation</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/DataTransfer">Data Transfer</a></li>
-	<li><a class="highlight" href="${ctxPath}/manager/operations/${opVersion}/GetConfiguration">Get Configuration</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/GetLocalListVersion">Get Local List Version</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/SendLocalList">Send Local List</a></li>
-	<hr>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/TriggerMessage">Trigger Message</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/GetCompositeSchedule">Get Composite Schedule</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/ClearChargingProfile">Clear Charging Profile</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/SetChargingProfile">Set Charging Profile</a></li>
-</ul>
+	<ul>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/ChangeAvailability"><fmt:message key="menu.changeAvailability" /></a></li>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/ChangeConfiguration"><fmt:message key="menu.changeConfiguration" /></a></li>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/ClearCache"><fmt:message key="menu.clearCache" /></a></li>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/GetDiagnostics"><fmt:message key="menu.getDiagnostics" /></a></li>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/RemoteStartTransaction"><fmt:message key="menu.remoteStartTransaction" /></a></li>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/RemoteStopTransaction"><fmt:message key="menu.remoteStopTransaction" /></a></li>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/Reset"><fmt:message key="menu.reset" /></a></li>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/UnlockConnector"><fmt:message key="menu.unlockConnector" /></a></li>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/UpdateFirmware"><fmt:message key="menu.updateFirmware" /></a></li>
+		<hr>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/ReserveNow"><fmt:message key="menu.reserveNow" /></a></li>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/CancelReservation"><fmt:message key="menu.cancelReservation" /></a></li>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/DataTransfer"><fmt:message key="menu.dataTransfer" /></a></li>
+		<li><a class="highlight" href="${ctxPath}/manager/operations/${opVersion}/GetConfiguration"><fmt:message key="menu.getConfiguration" /></a></li>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/GetLocalListVersion"><fmt:message key="menu.getLocalListVersion" /></a></li>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/SendLocalList"><fmt:message key="menu.sendLocalList" /></a></li>
+		<hr>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/TriggerMessage"><fmt:message key="menu.triggerMessage" /></a></li>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/GetCompositeSchedule"><fmt:message key="menu.getCompositeSchedule" /></a></li>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/ClearChargingProfile"><fmt:message key="menu.clearChargingProfile" /></a></li>
+		<li><a href="${ctxPath}/manager/operations/${opVersion}/SetChargingProfile"><fmt:message key="menu.setChargingProfile" /></a></li>
+	</ul>	
 </div>
 <div class="op16-content">
 	<%@ include file="../op-forms/GetConfigurationForm.jsp" %>

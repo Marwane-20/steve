@@ -22,17 +22,17 @@
 <%@ include file="../00-op-bind-errors.jsp" %>
 <div class="content">
 <div class="left-menu">
-<ul>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/ChangeAvailability">Change Availability</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/ChangeConfiguration">Change Configuration</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/ClearCache">Clear Cache</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/GetDiagnostics">Get Diagnostics</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/RemoteStartTransaction">Remote Start Transaction</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/RemoteStopTransaction">Remote Stop Transaction</a></li>
-	<li><a class="highlight" href="${ctxPath}/manager/operations/${opVersion}/Reset">Reset</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/UnlockConnector">Unlock Connector</a></li>
-	<li><a href="${ctxPath}/manager/operations/${opVersion}/UpdateFirmware">Update Firmware</a></li>
-</ul>
+    <ul>
+        <li><a href="${ctxPath}/manager/operations/${opVersion}/ChangeAvailability"><fmt:message key="menu.changeAvailability" /></a></li>
+        <li><a href="${ctxPath}/manager/operations/${opVersion}/ChangeConfiguration"><fmt:message key="menu.changeConfiguration" /></a></li>
+        <li><a href="${ctxPath}/manager/operations/${opVersion}/ClearCache"><fmt:message key="menu.clearCache" /></a></li>
+        <li><a href="${ctxPath}/manager/operations/${opVersion}/GetDiagnostics"><fmt:message key="menu.getDiagnostics" /></a></li>
+        <li><a href="${ctxPath}/manager/operations/${opVersion}/RemoteStartTransaction"><fmt:message key="menu.remoteStartTransaction" /></a></li>
+        <li><a href="${ctxPath}/manager/operations/${opVersion}/RemoteStopTransaction"><fmt:message key="menu.remoteStopTransaction" /></a></li>
+        <li><a class="highlight" href="${ctxPath}/manager/operations/${opVersion}/Reset"><fmt:message key="menu.reset" /></a></li>
+        <li><a href="${ctxPath}/manager/operations/${opVersion}/UnlockConnector"><fmt:message key="menu.unlockConnector" /></a></li>
+        <li><a href="${ctxPath}/manager/operations/${opVersion}/UpdateFirmware"><fmt:message key="menu.updateFirmware" /></a></li>
+    </ul>    
 </div>
 <div class="op-content">
     <%@ include file="../op-forms/ResetForm.jsp" %>
