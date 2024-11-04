@@ -19,38 +19,50 @@
 
 --%>
 <form:form action="${ctxPath}/manager/operations/${opVersion}/ClearChargingProfile" modelAttribute="params">
-    <section><span>Charge Points with OCPP ${opVersion}</span></section>
+    <section><span><fmt:message key="form.chargePointsWithOcpp" /></span></section>
     <%@ include file="../00-cp-multiple.jsp" %>
-    <section><span>Parameters</span></section>
+    <section><span><fmt:message key="form.parameters" /></span></section>
     <table class="userInput">
         <tr>
-            <td>Filter Type:</td>
-            <td><form:select path="filterType">
-                <form:options items="${filterType}"/>
-            </form:select>
-            </td>
-        </tr>
-        <tr>
-            <td>Charging Profile ID:</td>
-            <td><form:select path="chargingProfilePk">
-                <form:options items="${profileList}" itemLabel="itemDescription" itemValue="chargingProfilePk"/>
-            </form:select>
-            </td>
-        </tr>
-        <tr>
-            <td>Connector ID (integer):</td>
-            <td><form:input path="connectorId" placeholder="0 = charge point as a whole. Leave empty to not set."/></td>
-        </tr>
-        <tr>
-            <td>Charging Profile Purpose:</td>
+            <td><fmt:message key="form.filterType" />:</td>
             <td>
-                <form:select path="chargingProfilePurpose">
-                    <option value="" selected>-- Empty --</option>
-                    <form:options items="${chargingProfilePurpose}"/>
+                <form:select path="filterType">
+                    <form:options items="${filterType}" />
                 </form:select>
             </td>
         </tr>
-        <tr><td>Stack Level (integer):</td><td><form:input path="stackLevel"/></td></tr>
-        <tr><td></td><td><div class="submit-button"><input type="submit" value="Perform"></div></td></tr>
+        <tr>
+            <td><fmt:message key="form.chargingProfileId" />:</td>
+            <td>
+                <form:select path="chargingProfilePk">
+                    <form:options items="${profileList}" itemLabel="itemDescription" itemValue="chargingProfilePk" />
+                </form:select>
+            </td>
+        </tr>
+        <tr>
+            <td><fmt:message key="form.connectorId" /> (integer):</td>
+            <td><form:input path="connectorId" placeholder="<fmt:message key='form.connectorIdPlaceholder' />" /></td>
+        </tr>
+        <tr>
+            <td><fmt:message key="form.chargingProfilePurpose" />:</td>
+            <td>
+                <form:select path="chargingProfilePurpose">
+                    <option value="" selected><fmt:message key="form.emptyOption" /></option>
+                    <form:options items="${chargingProfilePurpose}" />
+                </form:select>
+            </td>
+        </tr>
+        <tr>
+            <td><fmt:message key="form.stackLevel" /> (integer):</td>
+            <td><form:input path="stackLevel" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div class="submit-button">
+                    <input type="submit" value="<fmt:message key='form.perform' />" />
+                </div>
+            </td>
+        </tr>
     </table>
 </form:form>

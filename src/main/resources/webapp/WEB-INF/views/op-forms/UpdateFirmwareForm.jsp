@@ -19,18 +19,29 @@
 
 --%>
 <form:form action="${ctxPath}/manager/operations/${opVersion}/UpdateFirmware" modelAttribute="params">
-    <section><span>Charge Points with OCPP ${opVersion}</span></section>
+    <section><span><fmt:message key="form.chargePointsWithOcpp" /></span></section>
     <%@ include file="../00-cp-multiple.jsp" %>
-    <section><span>Parameters</span></section>
+    <section><span><fmt:message key="form.parameters" /></span></section>
     <table class="userInput">
-        <tr><td>Location (directory URI):</td><td><form:input path="location" /></td></tr>
-        <tr><td>Retries (integer):</td><td><form:input path="retries" placeholder="optional" /></td></tr>
-        <tr><td>Retry Interval (integer):</td><td><form:input path="retryInterval" placeholder="optional" /></td></tr>
-        <tr><td>Retrieve Date/Time:</td>
-            <td>
-                <form:input path="retrieve" cssClass="dateTimePicker"/>
-            </td>
+        <tr>
+            <td><fmt:message key="form.location" /> (directory URI):</td>
+            <td><form:input path="location" /></td>
         </tr>
-        <tr><td></td><td><div class="submit-button"><input type="submit" value="Perform"></div></td></tr>
+        <tr>
+            <td><fmt:message key="form.retries" /> (integer):</td>
+            <td><form:input path="retries" placeholder="<fmt:message key='form.optional' />" /></td>
+        </tr>
+        <tr>
+            <td><fmt:message key="form.retryInterval" /> (integer):</td>
+            <td><form:input path="retryInterval" placeholder="<fmt:message key='form.optional' />" /></td>
+        </tr>
+        <tr>
+            <td><fmt:message key="form.retrieveDateTime" />:</td>
+            <td><form:input path="retrieve" cssClass="dateTimePicker"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><div class="submit-button"><input type="submit" value="<fmt:message key='form.perform' />"></div></td>
+        </tr>
     </table>
 </form:form>

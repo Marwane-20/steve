@@ -19,17 +19,21 @@
 
 --%>
 <form:form action="${ctxPath}/manager/operations/${opVersion}/Reset" modelAttribute="params">
-    <section><span>Charge Points with OCPP ${opVersion}</span></section>
+    <section><span><fmt:message key="form.chargePointsWithOcpp" /></span></section>
     <%@ include file="../00-cp-multiple.jsp" %>
-    <section><span>Parameters</span></section>
+    <section><span><fmt:message key="form.parameters" /></span></section>
     <table class="userInput">
         <tr>
-            <td>Reset Type:</td>
+            <td><fmt:message key="form.resetType" />:</td>
             <td>
                 <form:select path="resetType">
                     <form:options items="${resetType}" />
                 </form:select>
-            </td></tr>
-        <tr><td></td><td><div class="submit-button"><input type="submit" value="Perform"></div></td></tr>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><div class="submit-button"><input type="submit" value="<fmt:message key='form.perform' />"></div></td>
+        </tr>
     </table>
 </form:form>

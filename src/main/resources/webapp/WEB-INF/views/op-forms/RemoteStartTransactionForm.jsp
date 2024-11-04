@@ -19,20 +19,25 @@
 
 --%>
 <form:form action="${ctxPath}/manager/operations/${opVersion}/RemoteStartTransaction" modelAttribute="params">
-    <section><span>Charge Points with OCPP ${opVersion}</span></section>
+    <section><span><fmt:message key="form.chargePointsWithOcpp" /></span></section>
     <%@ include file="../00-cp-single.jsp" %>
-    <section><span>Parameters</span></section>
+    <section><span><fmt:message key="form.parameters" /></span></section>
     <table class="userInput">
-        <tr><td>Connector ID:</td>
+        <tr>
+            <td><fmt:message key="form.connectorId" />:</td>
             <td><form:select path="connectorId" disabled="true"/></td>
         </tr>
-        <tr><td>OCPP ID Tag:</td>
+        <tr>
+            <td><fmt:message key="form.ocppIdTag" />:</td>
             <td>
                 <form:select path="idTag">
                     <form:options items="${idTagList}" />
                 </form:select>
             </td>
         </tr>
-        <tr><td></td><td><div class="submit-button"><input type="submit" value="Perform"></div></td></tr>
+        <tr>
+            <td></td>
+            <td><div class="submit-button"><input type="submit" value="<fmt:message key='form.perform' />"></div></td>
+        </tr>
     </table>
 </form:form>

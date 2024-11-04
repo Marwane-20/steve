@@ -19,23 +19,34 @@
 
 --%>
 <form:form action="${ctxPath}/manager/operations/${opVersion}/GetCompositeSchedule" modelAttribute="params">
-    <section><span>Charge Points with OCPP ${opVersion}</span></section>
+    <section><span><fmt:message key="form.chargePointsWithOcpp" /></span></section>
     <%@ include file="../00-cp-multiple.jsp" %>
-    <section><span>Parameters</span></section>
+    <section><span><fmt:message key="form.parameters" /></span></section>
     <table class="userInput">
         <tr>
-            <td>Connector ID (integer):</td>
-            <td><form:input path="connectorId" placeholder="0 = charge point as a whole"/></td>
+            <td><fmt:message key="form.connectorId" /> (integer):</td>
+            <td><form:input path="connectorId" placeholder="<fmt:message key='form.connectorPlaceholder' />" /></td>
         </tr>
-        <tr><td>Duration (in seconds):</td><td><form:input path="durationInSeconds"/></td></tr>
-        <tr><td>Charging Rate Unit:</td>
+        <tr>
+            <td><fmt:message key="form.durationInSeconds" />:</td>
+            <td><form:input path="durationInSeconds"/></td>
+        </tr>
+        <tr>
+            <td><fmt:message key="form.chargingRateUnit" />:</td>
             <td>
                 <form:select path="chargingRateUnit">
-                    <option value="" selected>-- Empty --</option>
+                    <option value="" selected><fmt:message key="form.emptyOption" /></option>
                     <form:options items="${chargingRateUnit}"/>
                 </form:select>
             </td>
         </tr>
-        <tr><td></td><td><div class="submit-button"><input type="submit" value="Perform"></div></td></tr>
+        <tr>
+            <td></td>
+            <td>
+                <div class="submit-button">
+                    <input type="submit" value="<fmt:message key='form.perform' />" />
+                </div>
+            </td>
+        </tr>
     </table>
 </form:form>

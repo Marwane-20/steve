@@ -19,22 +19,37 @@
 
 --%>
 <form:form action="${ctxPath}/manager/operations/${opVersion}/GetConfiguration" modelAttribute="params">
-    <section><span>Charge Points with OCPP ${opVersion}</span></section>
+    <section><span><fmt:message key="form.chargePointsWithOcpp" /></span></section>
     <%@ include file="../00-cp-multiple.jsp" %>
-    <section><span>Parameters</span></section>
+    <section><span><fmt:message key="form.parameters" /></span></section>
     <table class="userInput">
-        <tr><td style="vertical-align:top"><input type="button" value="Select All" onClick="selectAll(document.getElementById('confKeyList'))"><input type="button" value="Select None" onClick="selectNone(document.getElementById('confKeyList'))">
-            <div class="info"><b>Info:</b> If none selected, the charge point returns a list of <b>all</b> configuration settings.</div>
-        </td>
+        <tr>
+            <td style="vertical-align:top">
+                <input type="button" value="<fmt:message key='form.selectAll' />" onClick="selectAll(document.getElementById('confKeyList'))">
+                <input type="button" value="<fmt:message key='form.selectNone' />" onClick="selectNone(document.getElementById('confKeyList'))">
+                <div class="info">
+                    <b><fmt:message key="form.info" />:</b> <fmt:message key="form.infoDescription" />
+                </div>
+            </td>
             <td>
-                <form:select path="confKeyList" multiple="true" size="14" >
+                <form:select path="confKeyList" multiple="true" size="14">
                     <c:forEach items="${ocppConfKeys}" var="k">
-                    <option value="${k.getKey()}" label="${k.getValue()}" title="${k.getValue()}">
+                        <option value="${k.getKey()}" label="${k.getValue()}" title="${k.getValue()}"></option>
                     </c:forEach>
                 </form:select>
             </td>
         </tr>
-        <tr><td>Custom Configuration Keys:</td><td><form:input path="commaSeparatedCustomConfKeys" placeholder="optional comma separated list" /></td></tr>
-        <tr><td></td><td><div class="submit-button"><input type="submit" value="Perform"></div></td></tr>
+        <tr>
+            <td><fmt:message key="form.customConfigKeys" />:</td>
+            <td><form:input path="commaSeparatedCustomConfKeys" placeholder="<fmt:message key='form.optionalCommaSeparatedList' />" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div class="submit-button">
+                    <input type="submit" value="<fmt:message key='form.perform' />" />
+                </div>
+            </td>
+        </tr>
     </table>
 </form:form>

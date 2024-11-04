@@ -19,12 +19,12 @@
 
 --%>
 <form:form action="${ctxPath}/manager/operations/${opVersion}/TriggerMessage" modelAttribute="params">
-    <section><span>Charge Points with OCPP ${opVersion}</span></section>
+    <section><span><fmt:message key="form.chargePointsWithOcpp" /></span></section>
     <%@ include file="../00-cp-multiple.jsp" %>
-    <section><span>Parameters</span></section>
+    <section><span><fmt:message key="form.parameters" /></span></section>
     <table class="userInput">
         <tr>
-            <td>Trigger Message:</td>
+            <td><fmt:message key="form.triggerMessage" />:</td>
             <td>
                 <form:select path="triggerMessage">
                     <form:options items="${triggerMessage}"/>
@@ -32,11 +32,11 @@
             </td>
         </tr>
         <tr>
-            <td>Connector ID (integer):</td>
-            <td><form:input path="connectorId" placeholder="if empty, charge point as a whole"/></td>
+            <td><fmt:message key="form.connectorId" /> (integer):</td>
+            <td><form:input path="connectorId" placeholder="<fmt:message key='form.placeholderWhole' />"/></td>
         </tr>
         <tr>
-            <td></td><td><div class="submit-button"><input type="submit" value="Perform"></div></td>
+            <td></td><td><div class="submit-button"><input type="submit" value="<fmt:message key='form.perform' />"></div></td>
         </tr>
     </table>
 </form:form>

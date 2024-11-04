@@ -19,23 +19,37 @@
 
 --%>
 <form:form action="${ctxPath}/manager/operations/${opVersion}/GetDiagnostics" modelAttribute="params">
-    <section><span>Charge Points with OCPP ${opVersion}</span></section>
+    <section><span><fmt:message key="form.chargePointsWithOcpp" /></span></section>
     <%@ include file="../00-cp-multiple.jsp" %>
-    <section><span>Parameters</span></section>
+    <section><span><fmt:message key="form.parameters" /></span></section>
     <table class="userInput">
-        <tr><td>Location (directory URI):</td><td><form:input path="location" /></td></tr>
-        <tr><td>Retries (integer):</td><td><form:input path="retries" placeholder="optional" /></td></tr>
-        <tr><td>Retry Interval (integer):</td><td><form:input path="retryInterval" placeholder="optional" /></td></tr>
-        <tr><td>Start Date/Time:</td>
+        <tr>
+            <td><fmt:message key="form.location" /></td>
+            <td><form:input path="location" /></td>
+        </tr>
+        <tr>
+            <td><fmt:message key="form.retries" /></td>
+            <td><form:input path="retries" placeholder="<fmt:message key='form.optional' />" /></td>
+        </tr>
+        <tr>
+            <td><fmt:message key="form.retryInterval" /></td>
+            <td><form:input path="retryInterval" placeholder="<fmt:message key='form.optional' />" /></td>
+        </tr>
+        <tr>
+            <td><fmt:message key="form.startDateTime" /></td>
+            <td><form:input path="start" placeholder="<fmt:message key='form.optional' />" cssClass="dateTimePicker"/></td>
+        </tr>
+        <tr>
+            <td><fmt:message key="form.stopDateTime" /></td>
+            <td><form:input path="stop" placeholder="<fmt:message key='form.optional' />" cssClass="dateTimePicker"/></td>
+        </tr>
+        <tr>
+            <td></td>
             <td>
-                <form:input path="start" placeholder="optional" cssClass="dateTimePicker"/>
+                <div class="submit-button">
+                    <input type="submit" value="<fmt:message key='form.perform' />" />
+                </div>
             </td>
         </tr>
-        <tr><td>Stop Date/Time:</td>
-            <td>
-                <form:input path="stop" placeholder="optional" cssClass="dateTimePicker"/>
-            </td>
-        </tr>
-        <tr><td></td><td><div class="submit-button"><input type="submit" value="Perform"></div></td></tr>
     </table>
 </form:form>
